@@ -7,6 +7,8 @@ typedef struct
   int VNum, ENum;
 } MGraph;
 
+Boolean visted[MAXSIZE];
+
 Status InitM(MGraph *M)
 {
   M->VNum = 0;
@@ -53,10 +55,33 @@ Status print(MGraph M)
   printf("\n");
 }
 
+// 深度优先遍历递归
+void DFS(MGraph M, int i)
+{
+  visted[i] = TRUE;
+  printf("%c   ", M.VArr[i]);
+  for (int j = 0; j < M.VNum; j++)
+  {
+    if (M.EArr[i][j] == 1 && !visted[j])
+      DFS(M, j);
+  }
+}
+
+void startDFS(MGraph M)
+{
+  int i;
+  for (i = 0; i < M.VNum; i++)
+    visted[i] = FALSE;
+  for (i = 0; i < M.VNum; i++)
+    if (!visted[i])
+      DFS(M, i);
+}
+
 int main()
 {
   MGraph M;
   CreateM(&M);
   print(M);
+  startDFS(M);
   return 0;
 }

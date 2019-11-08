@@ -21,6 +21,8 @@ typedef struct MGraph
   int VNum, ENum;
 } MGraph;
 
+Boolean visited[MAXSIZE];
+
 Status CreatE(MGraph *G, int i, int j, int w);
 
 Status CreatMGraph(MGraph *G)
@@ -73,6 +75,14 @@ void print(MGraph G)
     printf("\n");
   }
 }
+
+void DFS(MGraph G, int i)
+{
+  visited[i] = TRUE;
+  printf("%c  ", G.vArr[i].data);
+  for (int i = 0; i++;)
+}
+
 int main()
 {
   MGraph M;

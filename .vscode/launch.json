@@ -16,7 +16,8 @@
       "environment": [],
       "externalConsole": true,
       "MIMode": "lldb",
-      "preLaunchTask": "build hello world"
+      "preLaunchTask": "build hello world",
+      "miDebuggerPath": "/Applications/Xcode.app/Contents/Developer/usr/bin/lldb-mi"
     }
   ]
 }

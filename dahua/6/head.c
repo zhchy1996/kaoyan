@@ -11,3 +11,4 @@
 typedef int Status;
 typedef int EdgeType;
 typedef char VType;
+typedef int Boolean;
